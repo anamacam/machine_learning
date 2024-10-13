@@ -1,70 +1,70 @@
-# Preparación de un Dataset
+ Preparación de un Dataset
 
-## 1. Recolección de Datos
-- **Definición de la fuente de datos**: Los datos pueden provenir de diversas fuentes como bases de datos, APIs, web scraping, sensores, o datasets públicos.
-- **Integración de diferentes fuentes**: Si los datos provienen de diferentes fuentes, deben combinarse en un solo dataset coherente.
+ 1. Recolección de Datos
+- Definición de la fuente de datos: Los datos pueden provenir de diversas fuentes como bases de datos, APIs, web scraping, sensores, o datasets públicos.
+- Integración de diferentes fuentes: Si los datos provienen de diferentes fuentes, deben combinarse en un solo dataset coherente.
 
-## 2. Exploración Inicial (Exploratory Data Analysis - EDA)
-- **Descripción estadística**: Revisar métricas estadísticas básicas (media, mediana, moda, rango, desviación estándar, etc.) para comprender la distribución de los datos.
-- **Visualización de datos**: Utilizar gráficos como histogramas, diagramas de caja, y gráficos de dispersión para detectar patrones y posibles problemas como la presencia de valores atípicos.
+2. Exploración Inicial (Exploratory Data Analysis - EDA)
+- Descripción estadística: Revisar métricas estadísticas básicas (media, mediana, moda, rango, desviación estándar, etc.) para comprender la distribución de los datos.
+- Visualización de datos: Utilizar gráficos como histogramas, diagramas de caja, y gráficos de dispersión para detectar patrones y posibles problemas como la presencia de valores atípicos.
 
-## 3. Limpieza de Datos
-- **Tratamiento de valores nulos o faltantes**:
+3. Limpieza de Datos
+- Tratamiento de valores nulos o faltantes:
   - Eliminar filas o columnas con valores nulos si son pocos y no importantes.
   - Imputar (rellenar) valores nulos con la media, mediana, moda u otros métodos como regresión o interpolación.
   
-- **Eliminación de duplicados**: Los registros duplicados pueden sesgar el análisis y deben ser eliminados.
+- Eliminación de duplicados**: Los registros duplicados pueden sesgar el análisis y deben ser eliminados.
 
-- **Corrección de errores**: Revisar errores tipográficos, inconsistencias en las unidades o formatos de los datos (como fechas o números mal formateados).
+- Corrección de errores: Revisar errores tipográficos, inconsistencias en las unidades o formatos de los datos (como fechas o números mal formateados).
 
-- **Normalización y estandarización**: Si los datos tienen diferentes unidades o escalas, se puede normalizar (escalar entre un rango como [0, 1]) o estandarizar (media 0, desviación estándar 1).
+- Normalización y estandarización**: Si los datos tienen diferentes unidades o escalas, se puede normalizar (escalar entre un rango como [0, 1]) o estandarizar (media 0, desviación estándar 1).
 
-## 4. Transformación de Datos
-- **Codificación de variables categóricas**: Convertir variables categóricas en datos numéricos. Esto puede hacerse mediante:
-  - **One-hot encoding**: Crear columnas binarias para cada categoría.
-  - **Label encoding**: Asignar un valor numérico a cada categoría (puede ser útil en variables ordinales).
+4. Transformación de Datos
+- Codificación de variables categóricas: Convertir variables categóricas en datos numéricos. Esto puede hacerse mediante:
+  - One-hot encoding: Crear columnas binarias para cada categoría.
+  - Label encoding: Asignar un valor numérico a cada categoría (puede ser útil en variables ordinales).
   
-- **Creación de nuevas características (feature engineering)**: Generar nuevas columnas basadas en las existentes, como combinaciones, logaritmos, polinomios, etc., que puedan mejorar la capacidad predictiva del modelo.
+- Creación de nuevas características (feature engineering): Generar nuevas columnas basadas en las existentes, como combinaciones, logaritmos, polinomios, etc., que puedan mejorar la capacidad predictiva del modelo.
 
-- **Discretización**: Convertir variables continuas en categóricas, dividiéndolas en rangos o bins.
+- Discretización: Convertir variables continuas en categóricas, dividiéndolas en rangos o bins.
 
-- **Reducción de dimensiones**: Utilizar técnicas como PCA (Análisis de Componentes Principales) para reducir el número de variables, eliminando aquellas que son redundantes o tienen baja varianza.
+- Reducción de dimensiones: Utilizar técnicas como PCA (Análisis de Componentes Principales) para reducir el número de variables, eliminando aquellas que son redundantes o tienen baja varianza.
 
-## 5. Manejo de valores atípicos (outliers)
-- **Identificar outliers** utilizando estadísticas (p. ej., Z-score) o métodos visuales como diagramas de caja, y decidir si eliminarlos, corregirlos o tratarlos de alguna forma.
+5. Manejo de valores atípicos (outliers)
+- Identificar outliers utilizando estadísticas (p. ej., Z-score) o métodos visuales como diagramas de caja, y decidir si eliminarlos, corregirlos o tratarlos de alguna forma.
 
-## 6. División del Dataset
-- **División en conjuntos de entrenamiento, validación y prueba**:
-  - **Entrenamiento**: Utilizado para ajustar el modelo.
-  - **Validación**: Usado para ajustar hiperparámetros y evitar sobreajuste.
-  - **Prueba**: Evaluación final del rendimiento del modelo.
+6. División del Dataset
+- División en conjuntos de entrenamiento, validación y prueba:
+  - Entrenamiento: Utilizado para ajustar el modelo.
+  - Validación: Usado para ajustar hiperparámetros y evitar sobreajuste.
+  - Prueba: Evaluación final del rendimiento del modelo.
   
 - Normalmente, los conjuntos se dividen en proporciones como 70% para entrenamiento, 15% para validación, y 15% para prueba, pero esto puede variar.
 
-## 7. Balanceo del Dataset
-- Si tienes un problema de clasificación desequilibrado, donde una clase es mucho más frecuente que otras, puedes usar técnicas como:
-  - **Submuestreo**: Reducir la cantidad de ejemplos de la clase mayoritaria.
-  - **Sobremuestreo**: Aumentar los ejemplos de la clase minoritaria.
-  - **SMOTE (Synthetic Minority Over-sampling Technique)**: Crear ejemplos sintéticos de la clase minoritaria.
+7. Balanceo del Dataset
+- Si hay un problema de clasificación desequilibrado, donde una clase es mucho más frecuente que otras, puedes usar técnicas como:
+  - Submuestreo: Reducir la cantidad de ejemplos de la clase mayoritaria.
+  - Sobremuestreo: Aumentar los ejemplos de la clase minoritaria.
+  - SMOTE (Synthetic Minority Over-sampling Technique): Crear ejemplos sintéticos de la clase minoritaria.
 
-## 8. Escalado y Normalización de Datos
-- **Escalado (Scaling)**: Redimensionar los datos para que queden en un rango común, por ejemplo, utilizando min-max scaling o estandarización.
-- **Normalización**: Asegurarse de que los datos sigan una distribución normal (media = 0, desviación estándar = 1), lo cual es importante para algunos modelos.
+ 8. Escalado y Normalización de Datos
+- Escalado (Scaling): Redimensionar los datos para que queden en un rango común, por ejemplo, utilizando min-max scaling o estandarización.
+- Normalización: Asegurarse de que los datos sigan una distribución normal (media = 0, desviación estándar = 1), lo cual es importante para algunos modelos.
 
-## 9. Codificación de Fechas o Datos Temporales
-- **Convertir fechas** en características como año, mes, día de la semana, etc.
-- **Extraer tendencias estacionales**, ciclos o patrones periódicos.
+9. Codificación de Fechas o Datos Temporales
+- Convertir fechas en características como año, mes, día de la semana, etc.
+- Extraer tendencias estacionales, ciclos o patrones periódicos.
 
-## 10. Agregación de Datos
+10. Agregación de Datos
 - Para datos temporales o series de tiempo, puede ser útil agregar los datos por períodos (diarios, semanales, mensuales) para reducir la granularidad y capturar patrones a largo plazo.
 
-## Herramientas Utilizadas en la Preparación de Datasets
-- **Pandas**: Para la manipulación y limpieza de datos.
-- **NumPy**: Para operaciones numéricas.
-- **Scikit-learn**: Provee funciones útiles para dividir conjuntos de datos, codificar variables categóricas, normalizar, y manejar outliers.
-- **Matplotlib/Seaborn**: Para la visualización de datos durante el EDA.
+Herramientas Utilizadas en la Preparación de Datasets
+- *Pandas: Para la manipulación y limpieza de datos.
+- NumPy: Para operaciones numéricas.
+- cikit-learn: Provee funciones útiles para dividir conjuntos de datos, codificar variables categóricas, normalizar, y manejar outliers.
+- Matplotlib/Seaborn: Para la visualización de datos durante el EDA.
 
-## Importancia de la Preparación de Datos
+Importancia de la Preparación de Datos
 El éxito de un modelo de Machine Learning depende en gran medida de la calidad del dataset. La buena preparación de los datos ayuda a:
 - Mejorar el rendimiento de los modelos.
 - Reducir sesgos o errores.
